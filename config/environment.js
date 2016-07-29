@@ -6,6 +6,18 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    firebase: {
+      apiKey: 'AIzaSyDgICRlYfEgIrtHxMTpsj-hnJX0EneW-pk',
+      authDomain: 'libraryapp-1befe.firebaseapp.com',
+      databaseURL: 'https://libraryapp-1befe.firebaseio.com',
+      storageBucket: 'libraryapp-1befe.appspot.com',
+    },
+    // if using ember-cli-content-security-policy
+    contentSecurityPolicy: {
+     'script-src': "'self' 'unsafe-eval' apis.google.com",
+     'frame-src': "'self' https://*.firebaseapp.com",
+     'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
     EmberENV: {
       EXTEND_PROTOTYPES: {
         Date: false,
