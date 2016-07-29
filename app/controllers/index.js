@@ -18,15 +18,15 @@ export default Ember.Controller.extend({
         email: email
       });
 
-      // Save record
-      newInvitation.save();
+      // Save record Promise
+      newInvitation.save().then((response) => {
+        // Set response message
+        this.set('responseMessage', `Thank you! We have just saved your email
+          address with the following id: ${response.get('id')}`);
 
-      // Set response message
-      this.set('responseMessage', `Thank you! We have just saved your email
-        address: ${this.get('emailAddress')}`);
-
-      // Clear emailAddress prop
-      this.set('emailAddress', '');
+        // Clear emailAddress prop
+        this.set('emailAddress', '');
+      });
     }
   }
 
